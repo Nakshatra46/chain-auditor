@@ -1,11 +1,11 @@
 # Chain-Mind Auditor
 
-Task 2 (Data/ML track) — a tool that pulls contract data off Etherscan
+Task 2- a tool that pulls contract data off Etherscan
 and runs it through a rule-based checker to flag sketchy patterns
 (self-destruct, delegatecall, hidden blacklists, that kind of thing)
 without needing an LLM in the loop.
 
-I went with plain pattern-matching instead of wiring up an LLM — mainly
+I went with plain pattern-matching instead of wiring up an LLM mainly
 because I wanted the flags to be explainable. If the script says
 "selfdestruct found," I want to be able to point at the exact line of
 regex that caught it, not hand-wave at a model's output. Full reasoning
@@ -103,7 +103,7 @@ chain-mind-auditor/
 └── .env.example
 ```
 
-## Stuff I know is rough
+Stuff I know is rough
 
 - The bytecode check is just scanning byte-pairs for opcodes like 0xff
   (selfdestruct) — it's not a real disassembler, so it'll occasionally
